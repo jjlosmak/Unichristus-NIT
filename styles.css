@@ -1093,3 +1093,23 @@ footer {
     margin-left: 0.5rem;
   }
 }
+
+/* ===== Permitir "passar o dedo pra cima" no hambúrguer (≤1105px) ===== */
+@media (max-width: 1105px) {
+  .menu {
+    height: 100dvh;                 /* usa altura da viewport real em mobile */
+    max-height: 100dvh;
+    overflow-y: auto;               /* <- habilita rolagem vertical */
+    -webkit-overflow-scrolling: touch; /* inércia (iOS; no Android não atrapalha) */
+    overscroll-behavior: contain;   /* evita "puxar" o fundo por engano */
+    touch-action: pan-y;            /* dica ao browser: gesto vertical aqui */
+    padding-top: 5.5rem;            /* estava 5rem: dá mais respiro no topo */
+    padding-bottom: calc(env(safe-area-inset-bottom, 0) + 24px);
+    scrollbar-gutter: stable both-edges; /* rolagem mais estável */
+  }
+
+  /* O overlay não deve "capturar" gestos de scroll */
+  .menu-overlay {
+    touch-action: none;
+  }
+}
