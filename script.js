@@ -192,8 +192,8 @@ document.addEventListener('DOMContentLoaded', function () {
     });
     
 
-    /* Ajuste: fecha o menu mobile ao clicar em links que NÃO são cabeçalhos de submenu */
-    const allMenuLinks = document.querySelectorAll('.menu a');
+    /* Ajuste: fecha o menu mobile ao clicar em links/botões que NÃO são cabeçalhos de submenu */
+    const allMenuLinks = document.querySelectorAll('.menu a, .menu button');
     const menuToggle = document.querySelector('.mobile-menu-toggle');
     const menu = document.querySelector('.menu');
     const overlay = document.querySelector('.menu-overlay');
